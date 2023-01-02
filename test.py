@@ -1,3 +1,20 @@
-# The program asks for the student's percentage and the student's name. It stores the marks of the student with the
-# name. Everytime an input of a name is taken, a message should be given out using the student's name, and giving the
-# student a grade: "John scored a B."
+marksObt = float(input("Enter your Marks: "))
+marksTot = int(input("Total Marks: "))
+
+
+percentage = (marksObt/marksTot) * 100
+
+if percentage >= 90:
+    print("Your grade is A")
+elif percentage >= 80:
+    print("Your grade is B.")
+elif percentage >= 70:
+    print("Your grade is C")
+elif percentage >= 60:
+    print("Your grade is D")
+elif percentage >= 50:
+    print("Your grade is E")
+else:
+    print("U")
+
+
