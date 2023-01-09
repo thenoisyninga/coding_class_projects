@@ -14,7 +14,7 @@ while isBuying:
     itemName = input("What do you want to buy?")
     if itemName in myMenu:
         cost = myMenu[itemName]
-        updateedCurrentBalance = currentBalance - cost
+        updatedCurrentBalance = currentBalance - cost
 
         # A restaurant program that has a menu with 5 random items.
         # - It initially asks for the customer's current balance.
