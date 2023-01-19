@@ -1,33 +1,26 @@
-myMenu = {"samosa": 20,
-          "patties": 30,
-          "roll": 50,
-          "tea": 35,
-          "pepsi": 55
-          }
-
-currentBalance = float(input("What is your current balance? "))
-isBuying = True
-
-while isBuying:
-    for item in myMenu:
-        print(f"{item} costs {myMenu[item]}")
-    itemName = input("What do you want to buy?")
-    if itemName in myMenu:
-        cost = myMenu[itemName]
-        updatedCurrentBalance = currentBalance - cost
-
-        # A restaurant program that has a menu with 5 random items.
-        # - It initially asks for the customer's current balance.
-        # - It asks what the customer would like to buy repeatedly until he/she wants to check out.
-        # - After which the program tells the updated balance of the customer
-
-        menu = {
+menu = {
             "Samosa": 20,
             "Kheer": 30,
             "Biryani": 100,
             "Tea": 40,
             "Paratha": 30,
         }
+
+currentBalance = float(input("What is your current balance? "))
+isBuying = True
+
+while isBuying:
+    for item in menu:
+        print(f"{item} costs {menu[item]}")
+    itemName = input("What do you want to buy?")
+    if itemName in menu:
+        cost = menu[itemName]
+        updatedCurrentBalance = currentBalance - cost
+
+        # A restaurant program that has a menu with 5 random items.
+        # - It initially asks for the customer's current balance.
+        # - It asks what the customer would like to buy repeatedly until he/she wants to check out.
+        # - After which the program tells the updated balance of the customer
 
         currentBalance = float(input("Enter current balance: "))
         isBuying = True

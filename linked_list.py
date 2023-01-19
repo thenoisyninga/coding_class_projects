@@ -25,3 +25,5 @@ def show_linked_list():
 
 show_linked_list()
 
+
+print(search(100))
