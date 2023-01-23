@@ -21,6 +21,7 @@ next_pointer = 7
 def show_linked_list():
     i = 0
     print(f"head --> {head}")
+    print(f"next pointer --> {next_pointer}")
     print("Index Data  Pointer")
     for node in linked_list:
         print(f"[{i}]   {node.data}" + ("  " if len(str(node.data)) == 1 else " ") + f"-> {node.pointer}")
@@ -61,7 +62,7 @@ def delete(delete_value):
                 linked_list[previous_pointer].pointer = linked_list[current_pointer].pointer
                 deleted = True
 
-            previous_pointer = current_pointer
+            previous_pointer = linked_list[previous_pointer].pointer
             current_pointer = linked_list[current_pointer].pointer
 
 def insert(insert_value):
@@ -95,6 +96,11 @@ def insert(insert_value):
                 placed = True
                 next_pointer += 1
 
+
+insert(50)
+insert(54)
+insert(100)
+show_linked_list()
 
 
 
