@@ -19,8 +19,8 @@ def insert(insert_value):
     global next_pointer
 
     if root_pointer is None:
-        root_pointer = 0
-        tree[next_pointer].value = insert_value
+        root_pointer = next_pointer
+        tree[root_pointer].value = insert_value
         next_pointer += 1
     else:
         tree[next_pointer].value = insert_value
@@ -45,9 +45,18 @@ def insert(insert_value):
 
 def print_tree():
     global tree
-    for node in tree:
-        print(f"{node.left_pointer} {node.value} {node.right_pointer}")
+    print(f"root_pointer --> {root_pointer}")
+    print(f"next_pointer --> {next_pointer}")
     print("")
+    print("-----------")
+    print("    L Val R")
+    print("-----------")
+    n = 0
+    for node in tree:
+        print(f"[{n}] {node.left_pointer} {node.value} {node.right_pointer}")
+        n += 1
+    print("")
+
 
 def search(search_value):
     global tree
@@ -56,16 +65,14 @@ def search(search_value):
     current_pointer = root_pointer
     found = False
 
-    while not found:
-        if current_pointer is None:
-            break
+    while not found and current_pointer is not None:
+
+        if search_value == tree[current_pointer].value:
+            found = True
+        elif search_value > tree[current_pointer].value:
+            current_pointer = tree[current_pointer].right_pointer
         else:
-            if search_value == tree[current_pointer].value:
-                found = True
-            elif search_value > tree[current_pointer].value:
-                current_pointer = tree[current_pointer].right_pointer
-            else:
-                current_pointer = tree[current_pointer].left_pointer
+            current_pointer = tree[current_pointer].left_pointer
 
     return found
 
@@ -79,4 +86,4 @@ insert(6)
 insert(78)
 print_tree()
 
-print(search(0))
+# print(search(0))
